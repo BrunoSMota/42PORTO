@@ -6,7 +6,7 @@
 /*   By: bsequeir <bsequeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:58:39 by bsequeir          #+#    #+#             */
-/*   Updated: 2023/04/19 17:19:15 by bsequeir         ###   ########.fr       */
+/*   Updated: 2023/04/21 19:22:22 by bsequeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,15 @@ char	**ft_split(char const *s, char c)
 	char	**sp;
 
 	sp = ft_alloc_split(s, c);
+	if (!sp)
+		return (0);
 	j = 0;
 	i = 0;
 	while (sp[j] != NULL && s[i] != '\0')
 	{
 		k = 0;
 		while (s[i] == c)
-		{
 			i++;
-		}
 		while (s[i] != '\0' && s[i] != c)
 		{
 			sp[j][k] = s[i];
@@ -116,7 +116,7 @@ char	**ft_split(char const *s, char c)
 	return (sp);
 }
 
-/*nt main(void)
+/*int main(void)
 {
     char **sp;
     char *s = "      split       this for   me  !	";

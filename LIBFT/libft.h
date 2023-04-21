@@ -6,7 +6,7 @@
 /*   By: bsequeir <bsequeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 17:22:04 by bsequeir          #+#    #+#             */
-/*   Updated: 2023/04/20 21:25:44 by bsequeir         ###   ########.fr       */
+/*   Updated: 2023/04/20 22:12:31 by bsequeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
