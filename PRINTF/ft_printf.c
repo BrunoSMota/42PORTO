@@ -6,7 +6,7 @@
 /*   By: bsequeir <bsequeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:37:00 by bsequeir          #+#    #+#             */
-/*   Updated: 2023/04/24 19:55:13 by bsequeir         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:54:58 by bsequeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,17 @@ int ft_printf(const char *format, ...)
     count = 0;
     while (format[i] != '\0')
     {
+        count++;
         if (format[i] == '%')
         {
-            count = count + 2;
+            count--;
             if (format[i + 1] == 'c')
             {
                 ft_putchar_fd(va_arg(list, int), 1);
-                count--;
+                count++;
             }
             if (format[i + 1] == 's')
-                count = count - ft_putstr_fdp(va_arg(list, char*), 1);
+                count = count + ft_putstr_fdp(va_arg(list, char*), 1);
             /*if (format[i + 1] == 'p')
                 count = count - ft_putpointer(va_arg(list, *void), 1);
             if (format[i + 1] == 'd')
@@ -94,19 +95,27 @@ int ft_printf(const char *format, ...)
             if (format[i + 1] == '%')
             {
                 write(1, &format[i+1], 1);
-                count--;
+                count++;
             }
+            i++;
         }
-        write(1, &format[i], 1);
+        else
+        {
+            write(1, &format[i], 1);
+            count++;
+        }
         i++;
     }
     va_end(list);
-    return(i - count - 1);
+    return(count);
 }
 
 int main(void)
 {
-    char c = 'c';
-    printf("%c\n", c);
-    ft_printf("%c\n", c);
+    char *c = "A casa rosa tem 4 quartos"; /*d = 'd'*/
+    int a, b;
+    b = printf("%s\n", c);
+    printf("%d\n", b);
+    a = ft_printf("%s\n", c);
+    printf("%d\n", a);
 }
