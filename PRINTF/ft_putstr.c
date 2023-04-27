@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsequeir <bsequeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 15:39:29 by bsequeir          #+#    #+#             */
-/*   Updated: 2023/04/27 22:27:16 by bsequeir         ###   ########.fr       */
+/*   Created: 2023/04/24 19:26:45 by bsequeir          #+#    #+#             */
+/*   Updated: 2023/04/27 18:50:58 by bsequeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include <unistd.h>
 
-# include <unistd.h>
-# include "LIBFT/libft.h"
-# include <stdarg.h>
+int	ft_putstr(const char *s)
+{
+	int	i;
 
-int	ft_printf(const char *format, ...);
-
-int	ft_putstr(char *s);
-
-int	ft_putchar(char c);
-
-int	ft_putdecimal(int n, int fd);
-
-int	ft_putuns(unsigned int u);
-
-int	ft_minhex(unsigned int hmin);
-
-int	ft_maxhex(unsigned int hmax);
-
-int	ft_putpointer(unsigned long point);
-
-#endif
+	i = 0;
+	if (!s)
+		return (ft_putstr("(null)"));
+	while (s[i] != '\0')
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
+}
