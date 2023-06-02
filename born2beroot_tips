@@ -1,0 +1,172 @@
+BORN2BEROOT
+
+O que e uma maquina virtual?
+Uma máquina virtual é um computador que é executado inteiramente em software, em vez de um hardware físico. As máquinas virtuais usam software em um computador físico (host) para replicar ou emular a funcionalidade de um computador ou sistema operacional diferente. Em essência, uma VM é um computador simulado dentro de um real.
+
+Como uma maquina virtual funciona?
+Do ponto de vista do usuário, as máquinas virtuais funcionam como computadores normais. Elas têm um sistema operacional (SO), armazenam arquivos, executam programas e possuem até componentes de hardware virtual. Mas como as VMs são inteiramente baseadas em software, elas precisam emprestar recursos de hardware de um host. Por exemplo, em uma máquina virtual, a CPU real do host físico é usada para modelar uma CPU virtual.
+
+Um único computador host pode executar várias VMs, todas com sistemas operacionais e funcionalidades completamente independentes. Um computador baseado em Windows pode hospedar uma máquina virtual macOS, fazendo com que um PC com Windows funcione como um Mac. Da mesma forma, um computador Mac pode hospedar uma máquina virtual Windows, que permite que um computador Apple funcione como um PC.
+
+Qual a diferenca entre Rocky e Debian?
+    Gerenciador de pacotes: Debian usa o gerenciador de pacotes APT (Advanced Packaging Tool) para instalar e gerenciar softwares, enquanto Rocky Linux usa o gerenciador de pacotes YUM (Yellowdog Updater Modified) ou DNF (Dandified Yum).
+
+    Disponibilidade de software: Debian é conhecido por ter uma grande quantidade de softwares disponíveis em seus repositórios oficiais, incluindo mais de 50.000 pacotes. Por outro lado, Rocky Linux ainda é um sistema operacional relativamente novo e pode ter menos softwares disponíveis em seus repositórios oficiais.
+
+    Em resumo, Debian é um sistema operacional Linux bem estabelecido, conhecido por sua estabilidade e confiabilidade, com um modelo de lançamento conservador. Já Rocky Linux é uma distribuição relativamente nova que foi lançada para preencher a lacuna deixada pelo CentOS, com um modelo de lançamento "rolling-release" e um foco em fornecer uma plataforma de código aberto confiável e robusta.
+
+Qual a diferenca entre apt e aptitude?
+Aptitude e apt-get são duas das ferramentas populares que tratam do gerenciamento de pacotes. Ambos são capazes de lidar com todos os tipos de atividades em pacotes, incluindo instalação, remoção, pesquisa, etc.
+Além da principal diferença ser que o Aptitude é um gerenciador de pacotes de alto nível, enquanto o APT é um gerenciador de pacotes de nível inferior que pode ser usado por outros gerenciadores de pacotes de nível superior, 
+ para a maioria dos casos, a sintaxe do Aptitude é mantida quase igual à do apt-get, para fazer os usuários do apt-get terem menos dor em migrar para o Aptitude, mas além disso, muitos recursos poderosos são integrados no Aptitude que o tornam aquele a ser escolhido.
+ 
+ O que e Apparmor?
+ AppArmor é um módulo de segurança do kernel Linux que permite ao administrador do sistema restringir os recursos dos programas com perfis específicos. Os perfis podem permitir o acesso à rede, ao soquete bruto e para ler, gravar ou executar arquivos. O AppArmor complementa o modelo tradicional de controle de acesso discricionário (DAC) do Unix, fornecendo controle de acesso obrigatório (MAC).
+
+O que e FireWall?
+Firewall é uma solução de segurança baseada em hardware ou software (mais comum) que, a partir de um conjunto de regras ou instruções, analisa o tráfego de rede para determinar quais operações de transmissão ou recepção de dados podem ser executadas. "Parede de fogo", a tradução literal do nome, já deixa claro que o firewall se enquadra em uma espécie de barreira de defesa. A sua missão, por assim dizer, consiste basicamente em bloquear tráfego de dados indesejado e liberar acessos bem-vindos.
+
+o que UFW?
+UFW (Uncomplicated Firewall) é um software de firewall para sistemas operacionais baseados em Linux, que fornece uma interface simplificada para configurar e gerenciar o firewall do sistema. Ele é frequentemente usado em servidores Linux para proteger as redes e servidores contra ameaças de segurança.
+
+O que e SSH?
+É o nome de um protocolo e do programa que o implementa cuja principal função é o acesso remoto a um servidor através de um canal seguro no qual todas as informações são criptografadas.
+
+O que e UFW?
+É um firewall que usa a linha de comando para configurar o iptables usando um pequeno número de comandos simples.
+
+O que e um Script?
+É um script salvo em um arquivo que ao ser executado fará a função de cada comando.
+
+O que e Crontab?
+É um gerenciador de processos em segundo plano. Os processos indicados serão executados no horário que você especificar no arquivo crontab
+
+O que e Wordpress?
+É um sistema de gerenciamento de conteúdo focado na criação de qualquer tipo de página da web.
+
+O que e wget?
+É uma ferramenta de linha de comando usada para baixar arquivos da web.
+
+O que e zip?
+É um utilitário de linha de comando para compactar e descompactar arquivos no formato ZIP
+
+o que e Mariadb?
+É um banco de dados. Ele é usado para várias finalidades, como armazenamento de dados, comércio eletrônico, funções de nível empresarial e aplicativos de manutenção de registros.
+
+O que e LifeSpeed?
+É um software de servidor web patenteado. É o quarto servidor da Web mais popular e é usado por cerca de 10% dos sites.
+
+O que é LVM?
+É um gestor de volume lógico. Fornece um método de atribuição de espaço em dispositivos de armazenamento de massa, que é mais flexível do que os esquemas convencionais de partição para armazenamento de volumes.
+
+obs: quando tiver ":" antes de uma palavra apos um tab o que for escrito depois e um comando para o ser usado no terminal.
+
+1- Para acessar o usuario root
+	:su
+	escrever senha
+2- Para instalacao do sudo devemos primeiro acessar o usario root(1) depois devemos usar o comando:
+	:apt install sudo
+	Apos a instalacao deve ser fazer reboot da maquina para as aplicacoes sejam feitas com o comando:
+	:sudo reboot
+3- Para verificar a instalacao do sudo:
+	:Su
+	escrever senha
+	:sudo -V
+4- Para criar um usuario com seu login
+	:sudo adduser "login" (nao e a palavra login e sim seu login real)
+5- Para criar um grupo
+	:sudo addgroup "group" (nao e a palavra group e sim o nome do seu grupo)
+6- Para verificar se o grupo foi criado:
+	:getent group "group"
+	ou
+	cat /etc/group
+7- Para adicionar um usuario ao grupo:
+	:sudo adduser "user" (nao e a palavra user e sim seu user) "group" (nao e a palavra group e sim o nome do seu grupo)
+8- Para verificar se o usuario foi adicionado ao grupo:
+	:getent group "group"
+9- para atualizar os repositorios que definimos
+	:sudo apt update
+10- Para instalacao de OpenSSH
+	:sudo apt install openssh-server
+11- Para verificar a instalacao do OpenSSH
+	:sudo service ssh status
+12- Para instalar UFW
+	:sudo apt install ufw
+13- Para abilitar UFW
+	:sudo ufw enable
+14- Permite que o firewall permite as conexoes atraves da porta 4242
+	:sudo ufw allow 4242
+15- Para verificar o status do UFW
+	sudo ufw status
+16- para conectarmos via ssh
+	Va ate as configuracoes da virtual box em network conectado a NAT, clique em advanced, depois em Port forwarding em Host Post e em Guest Port escrever 4242, apos isso mudar de NAT para Bridged Adapter
+17- Para verificar o endereco IP da maquina virtual
+	:ip a | grep inet | grep 'global dynamic' | cut -d'/' -f1 | awk '{ print $2 }'😎️
+18- Para podermos conectar o computador a maquina virtual
+	abra o terminal do computdor e escreva
+	:ssh bsequeir@"ip do pc" -p 4242
+19- Para ver sua arquitetura versao do kernel
+	:uname -a
+20- Para verificar o numero de nucleos fisicos
+	:grep "physical id" /proc/cpuinfo | wc -l
+21- Para verificar o numero de nucleos virtuales
+	:grep processor /proc/cpuinfo |wc -l
+22- Para mostrar a memoria RAM
+	:free --mega
+23- Para mostrar apenas o que precisamos para o trabalho da memoria RAM
+	:free --mega | '$1 == "Mem:" {print $3}'
+24- Para obter a memoria RAM total
+	:free --mega | '$1 == "Mem:" {print $2}'
+24- Para obter a porcentagem de memoria RAM utilizada
+	:free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
+25- Para verificar a memoria do disco ocupada e disponivel
+	:df -m | grep "/dev/" | grep -v "/boot" | awk '{memory_use += $3} END {print memory_use}'
+26- Para obter o espaco da memoria do disco toda utilizada
+	:df -m | grep "/dev/" | grep -v "/boot" | awk '{memory_use += $2} END {printf ("%.0fGb\n"), memory_result/1024}'
+27- Para obter a porcentagem da memoria do disco utilizada
+	:df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf("(%d%%)\n"), use/total*100}'
+28- Para obter a porcentagem do uso do CPU
+	:vmstat 1 4 | tail -1 | awk '{print %15}'
+29- Para ver a hora do ultimo reinicio
+	:who -b | awk '$1 == "system" {print $3 " " $4}'
+30- Para verificar a LVM
+	:if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi
+31- Para verificar o numero de conexoes TCP estabelecidas
+	:ss -ta | grep ESTAB | wc -l
+32- Para verificar o nome dos usuarios
+	:users | wc -w
+33- Para obter o endereco MAC
+	:ip link | grep "link/ether" | awk '{print $2}'
+34- Para obter o numero de enderecos executados com sudo
+	:journalctl _COMM=sudo | grep COMMAND | wc -l
+35- Para editar Crontab
+	:sudo crontab -u root -e
+36- wordpress
+	titulo do site: Bsqueir WP
+	login: wp-bsequeir
+	senha: 12345
+	site: 10.11.248.158
+37- Como ver seu usuario e seu host no mariadb
+	:SELECT user,host FROM mysql.user;
+38- Para verificar se as particoes estao corretas
+	:lsblk
+39- para verificar qual portas estao sendo usadas pela maquina virtual
+	:ss -tunlp
+40- para mudar o ficheiro de dhcp para static
+	:sudo vim /etc/network/interfaces
+	Comentar a linha "iface enp0s3 inet dhcp"
+	escrever na linha abaixo "iface enp0s3 inet static"
+	Depois escrever na linha abaixo:
+	:address 10.11.248.158
+	:netmask 255.255.0.0
+	:gateway 10.11.(numero da maquina)
+	dns-nameservers 10.11.254.254
+	Apos essa mudanca reinicie a maquina
+Root password: Mario&Pech42
+USer password: Ola42Portugal
+Encryption password: Hello42bsequeir
+OpenLiteSpeed login: idroot
+OpenLiteSpeed senha: 123456
+
+
+Marioparty99!
